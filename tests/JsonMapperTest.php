@@ -18,7 +18,7 @@ trait FizSetter
 
 abstract class AbstractHydratorClass
 {
-    public ?string $foo    = null;
+    public ?string $foo = null;
     protected ?string $bar = null;
     protected ?string $fiz = null;
 
@@ -52,15 +52,14 @@ class MockJsonBadHydrationClass extends AbstractHydratorClass
 {
     private ?string $buzz = null;
 
-    // buzz
-    public function setBuzz(string $buzz) : void
-    {
-        $this->buzz = $buzz;
-    }
-
     public function getBuzz() : ?string
     {
         return $this->buzz;
+    }
+
+    public function setBuzz(string $buzz) : void
+    {
+        $this->buzz = $buzz;
     }
 }
 
@@ -71,7 +70,6 @@ class MockJsonHydratorClass extends AbstractHydratorClass
 
     private ?string $buzz = null;
 
-    // buzz
     public function getBuzz() : ?string
     {
         return $this->buzz;

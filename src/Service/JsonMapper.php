@@ -25,8 +25,8 @@ class JsonMapper
                 continue;
             }
 
-            if (is_callable([$newObject, 'set'.ucfirst($key)])) {
-                $newObject->{'set'.ucfirst($key)}($value);
+            if (is_callable([$newObject, 'set' . ucfirst($key)])) {
+                $newObject->{'set' . ucfirst($key)}($value);
             } elseif (property_exists($newObject, $key)) {
                 $newObject->{$key} = $value;
             }
