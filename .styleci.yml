@@ -1,0 +1,9 @@
+preset: recommended
+tab-width: 4
+use-tabs: false
+disabled:
+  - return_type_declaration
+  - unalign_equals
+enabled:
+    - align_equals
+    - no_blank_lines_after_return

@@ -1,0 +1,11 @@
+*~
+*.swp
+/nbproject/private/
+/vendor/
+.idea/
+.DS_Store
+
+# Code coverage
+coverage/
+reports/
+.phpunit.result.cache
