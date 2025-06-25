@@ -1,5 +1,6 @@
 # PHP Alchemist JSON
 Package: `php-alchemist/json`
+Current Version: v1.x -- (2025/06)
 
 
 ## What?
@@ -32,12 +33,12 @@ otherwise it will then go through the same process to set the JSON keys via sett
 #### Example
 
 ```php 
-$json = '{"test":"blah","doSomething":"asdf"}';
 class Demo {
   public string $test;
   public string $doSomething;
 }
 
+$json   = '{"test":"blah","doSomething":"asdf"}';
 $mapper = new PHPAlchemist\Json\Service\JsonMapper();
 $asdf   = $mapper->map($json, Demo::class);
 
