@@ -2,7 +2,7 @@
 
 namespace Unit\Trait;
 
-use PHPAlchemist\Trait\JsonHydratorTrait;
+use PHPAlchemist\Json\Trait\JsonHydratorTrait;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
