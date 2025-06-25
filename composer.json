@@ -2,7 +2,7 @@
     "name": "php-alchemist/json",
     "description": "Collection of services for JSON functionality",
     "type": "library",
-    "license": "MIT",
+    "license": "BSD-3-Clause",
     "require": {
         "php": ">=8.4"
     },
