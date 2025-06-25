@@ -7,6 +7,7 @@ use PHPAlchemist\Json\Exception\BadJsonException;
 /**
  * Class is *not* final so it could be extended by others if
  * needsbe.
+ *
  * @psalm-suppress ClassMustBeFinal
  */
 class JsonMapper
@@ -31,8 +32,8 @@ class JsonMapper
                 continue;
             }
 
-            if (is_callable([$newObject, 'set' . ucfirst($key)])) {
-                $newObject->{'set' . ucfirst($key)}($value);
+            if (is_callable([$newObject, 'set'.ucfirst($key)])) {
+                $newObject->{'set'.ucfirst($key)}($value);
             } elseif (property_exists($newObject, $key)) {
                 $newObject->{$key} = $value;
             }
@@ -40,7 +41,6 @@ class JsonMapper
 
         return $newObject;
     }
-
 
     protected function validateJson(string $json) : bool
     {

@@ -18,7 +18,7 @@ trait FizSetter
 
 abstract class AbstractHydratorClass
 {
-    public ?string $foo = null;
+    public ?string $foo    = null;
     protected ?string $bar = null;
     protected ?string $fiz = null;
 
