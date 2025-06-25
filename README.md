@@ -1,5 +1,5 @@
 # PHP Alchemist JSON
-Package: php-alchemist/json
+Package: `php-alchemist/json`
 
 
 ## What
