@@ -2,7 +2,7 @@
 
 namespace PHPAlchemist\Json\Exception;
 
-class BadJsonException extends \Exception
+final class BadJsonException extends \Exception
 {
     protected $message = 'Invalid JSON';
 }

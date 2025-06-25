@@ -8,6 +8,7 @@
     findUnusedBaselineEntry="true"
     findUnusedCode="false"
     usePhpDocMethodsWithoutMagicCall="true"
+    errorBaseline="psalm-baseline.xml"
 >
     <projectFiles>
         <directory name="src" />

@@ -4,6 +4,11 @@ namespace PHPAlchemist\Json\Service;
 
 use PHPAlchemist\Json\Exception\BadJsonException;
 
+/**
+ * Class is *not* final so it could be extended by others if
+ * needsbe.
+ * @psalm-suppress ClassMustBeFinal
+ */
 class JsonMapper
 {
     public function map(string $json, string $class) : object
@@ -12,6 +17,7 @@ class JsonMapper
             throw new BadJsonException();
         }
 
+        /** @psalm-suppress InvalidStringClass  */
         $newObject = new $class();
         if (is_callable([$newObject, 'hydrateFromJson'])) {
             $newObject->hydrateFromJson($json);
@@ -35,9 +41,10 @@ class JsonMapper
         return $newObject;
     }
 
+
     protected function validateJson(string $json) : bool
     {
-        if (!is_string($json) || strpos($json, '{') !== 0) {
+        if (strpos($json, '{') !== 0) {
             return false;
         }
 
