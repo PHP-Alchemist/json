@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8bf609005ebfe0153b6371598fa0bf0d",
+    "content-hash": "51d629a8506d505ddb00c6d21d110d4f",
     "packages": [],
     "packages-dev": [
         {
@@ -1189,16 +1189,16 @@
         },
         {
             "name": "psalm/phar",
-            "version": "6.x-dev",
+            "version": "7.0.0-beta9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/psalm/phar.git",
-                "reference": "177edb12fa552b3f172aa8117b9260a55497adc7"
+                "reference": "194022f4d2a23e58df8fc2a51d216fb0d9a08a65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/psalm/phar/zipball/177edb12fa552b3f172aa8117b9260a55497adc7",
-                "reference": "177edb12fa552b3f172aa8117b9260a55497adc7",
+                "url": "https://api.github.com/repos/psalm/phar/zipball/194022f4d2a23e58df8fc2a51d216fb0d9a08a65",
+                "reference": "194022f4d2a23e58df8fc2a51d216fb0d9a08a65",
                 "shasum": ""
             },
             "require": {
@@ -1218,9 +1218,9 @@
             "description": "Composer-based Psalm Phar",
             "support": {
                 "issues": "https://github.com/psalm/phar/issues",
-                "source": "https://github.com/psalm/phar/tree/master"
+                "source": "https://github.com/psalm/phar/tree/7.0.0-beta9"
             },
-            "time": "2025-02-20T09:53:07+00:00"
+            "time": "2025-06-01T15:33:06+00:00"
         },
         {
             "name": "psr/container",
@@ -3516,9 +3516,9 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "phpunit/phpunit": 20,
         "squizlabs/php_codesniffer": 20,
         "phpmd/phpmd": 20,
-        "psalm/phar": 20,
         "povils/phpmnd": 20
     },
     "prefer-stable": false,
