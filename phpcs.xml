@@ -35,12 +35,7 @@
     <rule ref="Generic.CodeAnalysis.UselessOverridingMethod"/>
     <!-- Forbid inline HTML in PHP code -->
     <rule ref="Generic.Files.InlineHTML"/>
-    <!-- Align corresponding assignment statement tokens -->
-    <!--rule ref="Generic.Formatting.MultipleStatementAlignment">
-        <properties>
-            <property name="error" value="true"/>
-        </properties>
-    </rule-->
+
     <!-- Include the whole PEAR standard -->
     <rule ref="PEAR">
         <exclude name="PEAR.Functions.FunctionCallSignature.CloseBracketLine"/>
@@ -60,19 +55,15 @@
         <exclude name="Squiz.Arrays.ArrayDeclaration.KeyNotAligned"/>
         <exclude name="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
     </rule>
-    <!--    <rule ref="Squiz.Commenting.ClosingDeclarationComment"/>-->
     <rule ref="Squiz.ControlStructures.ControlSignature"/>
     <rule ref="Squiz.ControlStructures.ElseIfDeclaration"/>
     <rule ref="Squiz.Commenting.BlockComment"/>
     <rule ref="Squiz.Commenting.DocCommentAlignment"/>
     <rule ref="Squiz.Commenting.EmptyCatchComment"/>
-    <!--    <rule ref="Squiz.Commenting.InlineComment"/>-->
-    <!--    <rule ref="Squiz.Commenting.LongConditionClosingComment"/>-->
     <rule ref="Squiz.Commenting.PostStatementComment"/>
     <rule ref="Squiz.Commenting.PostStatementComment.Found">
         <severity>0</severity>
     </rule>
-    <!--    <rule ref="Squiz.Commenting.VariableComment"/>-->
     <rule ref="Squiz.Formatting.OperatorBracket"/>
     <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
         <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpaceAfterEquals"/>
@@ -85,7 +76,6 @@
     <rule ref="Squiz.Operators.ComparisonOperatorUsage.ImplicitTrue">
         <severity>0</severity>
     </rule>
-    <!--    <rule ref="Squiz.PHP.DisallowInlineIf"/>-->
     <rule ref="Squiz.Scope.MethodScope"/>
     <rule ref="Squiz.Strings.ConcatenationSpacing"/>
     <rule ref="Squiz.WhiteSpace.ControlStructureSpacing"/>
@@ -128,7 +118,6 @@
         </properties>
     </rule>
 
-    <!--    <rule ref="Squiz.Arrays.ArrayDeclaration.KeyNotAligned" />-->
     <rule ref="Squiz.Arrays.ArrayDeclaration.ValueNotAligned"/>
     <rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNotAligned"/>
     <rule ref="Squiz.Arrays.ArrayDeclaration.CloseBraceNewLine"/>
