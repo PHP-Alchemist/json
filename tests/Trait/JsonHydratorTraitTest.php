@@ -3,7 +3,6 @@
 namespace Unit\Trait;
 
 use PHPAlchemist\Json\Trait\JsonHydratorTrait;
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 class MockJsonHydratorTraitClass
@@ -46,7 +45,6 @@ class MockJsonHydratorTraitClass
     }
 }
 
-#[CoversClass(JsonHydratorTrait::class)]
 class JsonHydratorTraitTest extends TestCase
 {
     public function testHydrateFromJson()

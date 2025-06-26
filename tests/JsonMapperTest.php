@@ -5,7 +5,6 @@ namespace Unit;
 use PHPAlchemist\Json\Exception\BadJsonException;
 use PHPAlchemist\Json\Service\JsonMapper;
 use PHPAlchemist\Json\Trait\JsonHydratorTrait;
-use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
 trait FizSetter
@@ -18,7 +17,7 @@ trait FizSetter
 
 abstract class AbstractHydratorClass
 {
-    public ?string $foo    = null;
+    public ?string    $foo = null;
     protected ?string $bar = null;
     protected ?string $fiz = null;
 
@@ -99,8 +98,6 @@ class MockBoringClass extends AbstractHydratorClass
     }
 }
 
-#[CoversClass(JsonMapper::class)]
-#[CoversClass(JsonHydratorTrait::class)]
 class JsonMapperTest extends TestCase
 {
     protected string $json = '{"foo":"alpha","bar":"beta","fiz":"charlie","buzz":"delta"}';
