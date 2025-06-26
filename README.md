@@ -7,6 +7,7 @@ Current Version: v1.x -- (2025/06)
 
 A basic library for working with json and being able to map json objects to a particular class
 
+[![Unit Tests](https://github.com/PHP-Alchemist/json/actions/workflows/php.yml/badge.svg)](https://github.com/PHP-Alchemist/json/actions/workflows/php.yml)
 [![StyleCI](https://github.styleci.io/repos/1007277226/shield?branch=master)](https://github.styleci.io/repos/1007277226?branch=master)  
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=PHP-Alchemist_json&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=PHP-Alchemist_json)
 
