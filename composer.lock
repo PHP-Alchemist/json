@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b27aaf1839d05c8a263967fbc1cec47a",
+    "content-hash": "6f507dc505d187379460ae955ddcb16a",
     "packages": [],
     "packages-dev": [
         {
@@ -1189,16 +1189,16 @@
         },
         {
             "name": "psalm/phar",
-            "version": "7.0.0-beta10",
+            "version": "7.0.0-beta11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/psalm/phar.git",
-                "reference": "c0038830f19a95a4f6570bfe2466750698e73331"
+                "reference": "99ad85ff246b0e7707578411e6c0f14b905f60fa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/psalm/phar/zipball/c0038830f19a95a4f6570bfe2466750698e73331",
-                "reference": "c0038830f19a95a4f6570bfe2466750698e73331",
+                "url": "https://api.github.com/repos/psalm/phar/zipball/99ad85ff246b0e7707578411e6c0f14b905f60fa",
+                "reference": "99ad85ff246b0e7707578411e6c0f14b905f60fa",
                 "shasum": ""
             },
             "require": {
@@ -1218,9 +1218,9 @@
             "description": "Composer-based Psalm Phar",
             "support": {
                 "issues": "https://github.com/psalm/phar/issues",
-                "source": "https://github.com/psalm/phar/tree/7.0.0-beta10"
+                "source": "https://github.com/psalm/phar/tree/7.0.0-beta11"
             },
-            "time": "2025-07-04T10:12:43+00:00"
+            "time": "2025-07-14T10:04:51+00:00"
         },
         {
             "name": "psr/container",
@@ -3516,15 +3516,16 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "squizlabs/php_codesniffer": 20,
         "phpmd/phpmd": 20,
-        "povils/phpmnd": 20
+        "phpunit/phpunit": 20,
+        "povils/phpmnd": 20,
+        "squizlabs/php_codesniffer": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=8.4"
     },
-    "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "platform-dev": {},
+    "plugin-api-version": "2.6.0"
 }

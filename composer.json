@@ -22,7 +22,7 @@
         "phpunit/phpunit": "^11.4@dev || ^12.0",
         "squizlabs/php_codesniffer": "4.0.x-dev",
         "phpmd/phpmd": "dev-master",
-        "psalm/phar": "7.0.0-beta10",
+        "psalm/phar": "7.0.0-beta11",
         "povils/phpmnd": "dev-master"
     },
     "scripts": {
