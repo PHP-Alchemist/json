@@ -16,20 +16,41 @@ A basic library for working with json and being able to map json objects to a pa
 
 The PHP Alchemist JSON library consists of two parts that can be used together or separately.
 
+Both camelCase and snake_case JSON keys are supported: a `first_name` key resolves to a
+`setFirstName()` setter or a `$firstName` property just as `firstName` would.
+
 ### JsonHydratorTrait
 
 The first is a trait `PHPAlchemist\Json\Trait\JsonHydratorTrait` which has a single function called
 `hydrateFromJson()` which accepts a string called `$json` which is expected to be a JSON object. It
-then will loop through the object and looks for setter functions or if the property exists for each 
-key and then sets the data appropriately on the object.
+then will loop through the object and look for a setter function or a matching property for each key
+and set the data appropriately on the object. Because the trait runs in the object's own scope, it
+can also populate protected/private properties that have no setter.
+
+Classes using the trait should implement `PHPAlchemist\Json\Contract\JsonHydratableInterface`; the
+trait satisfies the interface, and implementing it is how the `JsonMapper` detects that the class
+hydrates itself.
+
+```php
+class Person implements \PHPAlchemist\Json\Contract\JsonHydratableInterface
+{
+    use \PHPAlchemist\Json\Trait\JsonHydratorTrait;
+
+    public ?string $firstName = null;
+    public ?string $lastName  = null;
+}
+
+$person = new Person();
+$person->hydrateFromJson('{"first_name":"Ada","last_name":"Lovelace"}');
+```
 
 ### JsonMapper
 
-The second is  `PHPAlchemist\Json\Service\JsonMapper` which has a `map()` functino which will accept 
-a JSON string (`$json`) and a classname (`$class`). This will validate the JSON and throw a 
-`PHPAlchemist\Json\Exception\BadJsonException` if it is invalid. It will then instantiate a new class 
-of  the given type, check to see if the `hydrateFromJson()` exists. If it does, then it will use that
-otherwise it will then go through the same process to set the JSON keys via setter or public access.
+The second is `PHPAlchemist\Json\Service\JsonMapper` which has a `map()` function which will accept
+a JSON string (`$json`) and a classname (`$class`). This will validate the JSON and throw a
+`PHPAlchemist\Json\Exception\BadJsonException` if it is invalid. It will then instantiate a new
+object of the given type and, if that object implements `JsonHydratableInterface`, delegate to its
+`hydrateFromJson()`. Otherwise it sets the JSON keys via setters or public properties.
 
 
 #### Example

@@ -2,57 +2,57 @@
 
 namespace PHPAlchemist\Json\Service;
 
+use PHPAlchemist\Json\Contract\JsonHydratableInterface;
 use PHPAlchemist\Json\Exception\BadJsonException;
+use PHPAlchemist\Json\Support\ObjectHydrator;
 
 /**
  * Class is *not* final so it could be extended by others if
- * needsbe.
+ * needs be.
  *
  * @psalm-suppress ClassMustBeFinal
  */
 class JsonMapper
 {
+    /**
+     * @template T of object
+     *
+     * @param class-string<T> $class
+     *
+     * @return T
+     *
+     * @throws BadJsonException
+     */
     public function map(string $json, string $class) : object
     {
         if (!$this->validateJson($json)) {
             throw new BadJsonException();
         }
 
-        /** @psalm-suppress InvalidStringClass  */
+        /** @psalm-suppress InvalidStringClass */
         $newObject = new $class();
-        if (is_callable([$newObject, 'hydrateFromJson'])) {
+
+        if ($newObject instanceof JsonHydratableInterface) {
             $newObject->hydrateFromJson($json);
 
             return $newObject;
         }
 
+        /** @var array<string, mixed> $jsonDecodedData */
         $jsonDecodedData = json_decode($json, true);
-        foreach ($jsonDecodedData as $key => $value) {
-            if (!property_exists($newObject, $key)) {
-                continue;
-            }
-
-            if (is_callable([$newObject, 'set'.ucfirst($key)])) {
-                $newObject->{'set'.ucfirst($key)}($value);
-            } elseif (property_exists($newObject, $key)) {
-                $newObject->{$key} = $value;
-            }
-        }
+        ObjectHydrator::hydrate($newObject, $jsonDecodedData);
 
         return $newObject;
     }
 
     protected function validateJson(string $json) : bool
     {
-        if (strpos($json, '{') !== 0) {
+        if (!json_validate($json)) {
             return false;
         }
 
-        $validation = json_encode(json_decode($json, true));
-        if ($validation !== $json) {
-            return false;
-        }
-
-        return true;
+        // Only a JSON object (or array) can be mapped onto an object's fields;
+        // reject scalars such as `1`, `"foo"`, `true` and `null`.
+        return is_array(json_decode($json, true));
     }
 }

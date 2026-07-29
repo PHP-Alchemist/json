@@ -45,6 +45,24 @@ class MockJsonHydratorTraitClass
     }
 }
 
+class MockSnakeCaseTraitClass
+{
+    use JsonHydratorTrait;
+
+    public ?string $firstName = null;
+    private ?string $lastName = null;
+
+    public function getLastName() : ?string
+    {
+        return $this->lastName;
+    }
+
+    public function setLastName(?string $lastName) : void
+    {
+        $this->lastName = $lastName;
+    }
+}
+
 class JsonHydratorTraitTest extends TestCase
 {
     public function testHydrateFromJson()
@@ -58,5 +76,14 @@ class JsonHydratorTraitTest extends TestCase
         $this->assertEquals('beta', $obj->getBar());
         $this->assertEquals('charlie', $obj->getFiz());
         $this->assertEquals('delta', $obj->getBuzz());
+    }
+
+    public function testHydrateFromJsonMapsSnakeCaseKeys()
+    {
+        $obj = new MockSnakeCaseTraitClass();
+        $obj->hydrateFromJson('{"first_name":"Ada","last_name":"Lovelace"}');
+
+        $this->assertEquals('Ada', $obj->firstName);
+        $this->assertEquals('Lovelace', $obj->getLastName());
     }
 }
