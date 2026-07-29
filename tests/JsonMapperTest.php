@@ -102,13 +102,13 @@ class MockBoringClass extends AbstractHydratorClass
 class MockInterfaceOnlyClass implements JsonHydratableInterface
 {
     public bool $hydratorCalled = false;
-    public ?string $foo = null;
+    public ?string $foo         = null;
 
     public function hydrateFromJson(string $json) : void
     {
         $this->hydratorCalled = true;
-        $data = json_decode($json, true);
-        $this->foo = $data['foo'] ?? null;
+        $data                 = json_decode($json, true);
+        $this->foo            = $data['foo'] ?? null;
     }
 }
 

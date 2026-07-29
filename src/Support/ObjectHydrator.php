@@ -16,11 +16,11 @@ namespace PHPAlchemist\Json\Support;
 final class ObjectHydrator
 {
     /**
-     * @param array<string, mixed> $data
+     * @param array<string, mixed>               $data
      * @param null|callable(string, mixed): void $assign How to assign a matched
-     *        property. Defaults to an external assignment (public properties
-     *        only). The JsonHydratorTrait passes a scope-bound closure so it can
-     *        also populate its own protected/private fields.
+     *                                                   property. Defaults to an external assignment (public properties
+     *                                                   only). The JsonHydratorTrait passes a scope-bound closure so it can
+     *                                                   also populate its own protected/private fields.
      */
     public static function hydrate(object $object, array $data, ?callable $assign = null) : void
     {

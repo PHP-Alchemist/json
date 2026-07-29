@@ -19,9 +19,9 @@ class JsonMapper
      *
      * @param class-string<T> $class
      *
-     * @return T
-     *
      * @throws BadJsonException
+     *
+     * @return T
      */
     public function map(string $json, string $class) : object
     {
