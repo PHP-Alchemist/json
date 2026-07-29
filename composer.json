@@ -26,6 +26,8 @@
         "friendsofphp/php-cs-fixer": "^3.95"
     },
     "scripts": {
-        "test" : "phpunit --no-coverage"
+        "test" : "phpunit --no-coverage",
+        "cs-check" : "php-cs-fixer check --diff",
+        "cs-fix" : "php-cs-fixer fix"
     }
 }
