@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Unit\Trait;
 
 use PHPAlchemist\Json\Trait\JsonHydratorTrait;

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PHPAlchemist\Json\Service;
 
 use PHPAlchemist\Json\Contract\JsonHydratableInterface;

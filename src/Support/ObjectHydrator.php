@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace PHPAlchemist\Json\Support;
 
 /**
@@ -26,7 +28,7 @@ final class ObjectHydrator
     {
         foreach ($data as $key => $value) {
             $studly = self::studly((string) $key);
-            $setter = 'set'.$studly;
+            $setter = 'set' . $studly;
 
             if (is_callable([$object, $setter])) {
                 $object->{$setter}($value);
